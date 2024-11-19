@@ -8,6 +8,21 @@ from scipy.sparse import hstack
 file_url = "https://raw.githubusercontent.com/WooatCoding/Fragyou/main/FYDT.csv"
 data = pd.read_csv(file_url, encoding='ISO-8859-1')
 
+data = data.drop(columns=['Image URL'])
+data = data.drop_duplicates(subset='Name', keep='first')
+
+data['Name'] = data['Name'].str.strip()
+data['Brand'] = data['Brand'].str.strip()
+data['Description'] = data['Description'].str.strip()
+data['Notes'] = data['Notes'].str.strip()
+
+data = data.dropna(subset=['Notes'])
+
+data['Name'] = data['Name'].str.lower()
+data['Brand'] = data['Brand'].str.lower()
+data['Description'] = data['Description'].str.lower()
+data['Notes'] = data['Notes'].str.lower()
+
 # Preprocesar las descripciones y las notas
 data['Notes'] = data['Notes'].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
 
