@@ -6,7 +6,7 @@ from scipy.sparse import hstack
 
 # Cargar el dataset
 file_url = "https://github.com/WooatCoding/Fragyou/blob/c380300a60cac28171bf5fdafb1559a2f796a1e6/FYDT.csv"
-data = pd.read_csv(file_url, encoding='ISO-8859-1')
+data = pd.read_csv(file_url, encoding='latin1')
 
 # Preprocesar las descripciones y las notas
 data['Notes'] = data['Notes'].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
