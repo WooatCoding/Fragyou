@@ -6,7 +6,7 @@ from scipy.sparse import hstack
 
 # Cargar el dataset
 file_url = "https://raw.githubusercontent.com/WooatCoding/Fragyou/main/FYDT.csv"
-data = pd.read_csv(file_url, encoding='ASCII')
+data = pd.read_csv(file_url, encoding='ISO-8859-1')
 
 data = data.drop(columns=['Image URL'])
 data = data.drop_duplicates(subset='Name', keep='first')
