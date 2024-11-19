@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
 
 # Cargar el dataset
-file_path = r"C:\Users\Tim\Documents\Proyecto IA\FYDT.csv"  # Cambia esto por la ruta de tu archivo
-data = pd.read_csv(r"C:\Users\Tim\Documents\Proyecto IA\FYDT.csv", encoding='ISO-8859-1')
+file_url = "https://github.com/WooatCoding/Fragyou/blob/c380300a60cac28171bf5fdafb1559a2f796a1e6/FYDT.csv"
+data = pd.read_csv(file_url, encoding='ISO-8859-1')
 
 # Preprocesar las descripciones y las notas
 data['Notes'] = data['Notes'].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
