@@ -51,12 +51,12 @@ def recommend_perfume(user_preferences, k=5):
     return recommendations
 
 # Título de la aplicación
-st.title('Recomendador de Perfumes')
+st.title('Frag You')
 
 # Ingreso de preferencias del usuario
-st.header('Ingrese sus preferencias')
+st.header('Cuéntanos que te gusta')
 
-description_input = st.text_area("Descripción de perfumes que le gustan (opcional)")
+description_input = st.text_area("Descripción de perfumes que le gustan")
 notes_input = st.text_input("Notas que le gustan (separadas por coma, ej. vainilla, almendra, cítrico)")
 
 # Procesar las preferencias del usuario
