@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
 
 # Cargar el dataset
-file_url = "https://github.com/WooatCoding/Fragyou/blob/c380300a60cac28171bf5fdafb1559a2f796a1e6/FYDT.csv"
+https://raw.githubusercontent.com/WooatCoding/Fragyou/main/FYDT.csv
 data = pd.read_csv(file_url, encoding='latin1')
 
 # Preprocesar las descripciones y las notas
