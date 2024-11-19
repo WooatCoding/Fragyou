@@ -38,7 +38,7 @@ notes_matrix = tfidf_notes.fit_transform(data['Notes'].fillna(''))
 final_matrix = hstack([description_matrix, notes_matrix])
 
 # Función para hacer recomendaciones basadas en las preferencias del usuario
-def recommend_perfume(user_preferences, k=5):
+def recommend_perfume(user_preferences, k=10):
     user_description_vector = tfidf_description.transform([user_preferences['Description']])
     user_notes_vector = tfidf_notes.transform([', '.join(user_preferences['Notes'])])
     user_features = hstack([user_description_vector, user_notes_vector])
